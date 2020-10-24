@@ -1,0 +1,8 @@
+version: '3'
+services:
+  nsjail:
+    image: ghcr.io/devplayer0/nsjail-alpine:3.0
+    build:
+      context: .
+      args:
+        NSJAIL_VERSION: '3.0'

@@ -1,0 +1,36 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    env:
+      CR_PAT_USER: devplayer0
+      REPO: ghcr.io/devplayer0/nsjail-alpine
+      NSJAIL_VERSION: '3.0'
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Log into GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ env.CR_PAT_USER }}
+          password: ${{ secrets.CI_PAT }}
+
+      - name: Build
+        run: |
+          docker build \
+            -t "${{ env.REPO }}:${{ github.sha }}" \
+            -t "${{ env.REPO }}:${{ env.NSJAIL_VERSION }}" \
+            -t "${{ env.REPO }}:latest" \
+            --build-arg NSJAIL_VERSION="${{ env.NSJAIL_VERSION }}" .
+
+      - name: Push
+        run: docker push "$REPO"
