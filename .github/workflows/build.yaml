@@ -33,4 +33,4 @@ jobs:
             --build-arg NSJAIL_VERSION="${{ env.NSJAIL_VERSION }}" .
 
       - name: Push
-        run: docker push "$REPO"
+        run: docker push --all-tags "$REPO"
