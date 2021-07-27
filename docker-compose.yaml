@@ -1,7 +1,7 @@
 version: '3'
 services:
   nsjail:
-    image: ghcr.io/devplayer0/nsjail-alpine:3.0
+    image: ghcr.io/devplayer0/nsjail-alpine:3.0-2
     build:
       context: .
       args:

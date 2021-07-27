@@ -15,3 +15,5 @@ RUN apk --no-cache add libstdc++ libnl3 protobuf iproute2 iptables
 
 COPY --from=builder /nsjail/nsjail /usr/sbin/nsjail
 COPY firewall.sh /usr/local/sbin/firewall.sh
+
+LABEL org.opencontainers.image.source https://github.com/devplayer0/nsjail-alpine
