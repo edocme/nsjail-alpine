@@ -1,4 +1,4 @@
-FROM alpine:3.12 AS builder
+FROM alpine:3.13 AS builder
 ARG NSJAIL_VERSION
 
 RUN apk --no-cache add git build-base pkgconfig flex bison linux-headers bsd-compat-headers protobuf-dev libnl3-dev
@@ -9,7 +9,7 @@ RUN git clone https://github.com/google/nsjail && \
     make -j$(nproc)
 
 
-FROM alpine:3.12
+FROM alpine:3.13
 
 RUN apk --no-cache add libstdc++ libnl3 protobuf iproute2 iptables
 
