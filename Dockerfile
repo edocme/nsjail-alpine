@@ -5,7 +5,7 @@ RUN apk --no-cache add git build-base pkgconfig flex bison linux-headers bsd-com
 
 RUN git clone https://github.com/google/nsjail && \
     cd nsjail/ && \
-    git checkout "$NSJAIL_VERSION" && \
+    git checkout "3.0" && \
     make -j$(nproc)
 
 
