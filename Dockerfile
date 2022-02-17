@@ -3,9 +3,9 @@ ARG NSJAIL_VERSION
 
 RUN apk --no-cache add git build-base pkgconfig flex bison linux-headers bsd-compat-headers protobuf-dev libnl3-dev
 
-RUN git clone https://github.com/google/nsjail && \
-    cd nsjail/ && \
-    git checkout "$NSJAIL_VERSION" && \
+RUN git clone https://github.com/google/nsjail.git /nsjail && \
+    cd /nsjail/ && \
+    git checkout "3.0" && \
     make -j$(nproc)
 
 
