@@ -16,9 +16,9 @@ jobs:
 
     env:
 
-      CR_PAT_USER: devplayer0
+      CR_PAT_USER: edocme
 
-      REPO: ghcr.io/devplayer0/nsjail-alpine
+      REPO: ghcr.io/edocme/nsjail-alpine
 
       PLATFORMS: linux/amd64,linux/arm64,linux/arm/v7
 
