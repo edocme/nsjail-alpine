@@ -1,7 +1,7 @@
 FROM alpine:3.13 AS builder
 ARG NSJAIL_VERSION
 
-RUN apk --no-cache add git build-base pkgconfig flex bison linux-headers bsd-compat-headers protobuf-dev libnl3-dev
+RUN set -eux && sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories; apk --no-cache add git build-base pkgconfig flex bison linux-headers bsd-compat-headers protobuf-dev libnl3-dev
 
 RUN git clone https://github.com/google/nsjail && \
     cd nsjail/ && \
