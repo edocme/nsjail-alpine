@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-20.04
 
     env:
-      CR_PAT_USER: devplayer0
-      REPO: ghcr.io/devplayer0/nsjail-alpine
+      CR_PAT_USER: edocme
+      REPO: ghcr.io/edocme/nsjail-alpine
       PLATFORMS: linux/amd64,linux/arm64,linux/arm/v7
       NSJAIL_VERSION: '3.0'
       REL: '2'
